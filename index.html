@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>TieStake · Vollständig überarbeitet</title>
+  <title>TieStake</title>
+
+     <!-- ===== FAVICON ===== -->
+   <link rel="icon" type="image/x-icon" href="favicon.ico">
+   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
   <style>
     :root{
       --bg0:#0b1720;
@@ -936,7 +943,6 @@
             </div>
             <button class="betbtn primary" id="minesStart">BET</button>
             <button class="betbtn" id="minesCashout" disabled>CASHOUT</button>
-            <button class="betbtn danger" id="minesReset">RESET</button>
           </div>
         </div>
         <div class="two-tables">
@@ -1236,6 +1242,8 @@
       const $ = (q) => document.querySelector(q);
       const $$ = (q) => Array.from(document.querySelectorAll(q));
 
+      let balance = 0;
+      
       function money(n) {
         const sign = n < 0 ? "-" : "";
         n = Math.abs(n);
@@ -1252,13 +1260,6 @@
 
       function winEffect(el) { if (!el) return; el.classList.add('win-glow'); setTimeout(() => el.classList.remove('win-glow'), 400); }
       function loseEffect(el) { if (!el) return; el.classList.add('shake'); setTimeout(() => el.classList.remove('shake'), 300); }
-
-      let balance = 0;
-      let realBalance = 0; // <<< ADD DAS HIER
-
-      function syncBalance(){
-      balance = realBalance;
-      }
 
       const balanceEl = $('#uiBalance');
       function updateBalance() { balanceEl.innerText = money(balance); }
@@ -1355,16 +1356,26 @@
         $('#minesPotential').innerText = money(minesBet * minesMult);
       }
 
-      function minesEnd(loss) {
-        minesActive = false;
-        $('#minesStart').disabled = false; $('#minesCashout').disabled = true;
-        $$('#minesTiles .tile').forEach((t, i) => {
-          t.classList.add('revealed');
-          if (minesMineSet.has(i)) t.classList.add('mine');
-          else if (minesRevealedSet.has(i)) t.classList.add('gem');
-        });
-        if (loss) pushRecent({ game: 'Mines', bet: minesBet, profit: -minesBet, winrate: 0, time: nowStamp() });
-      }
+function minesEnd(loss) {
+  minesActive = false;
+
+  $('#minesStart').disabled = false;
+  $('#minesCashout').disabled = true;
+
+  $$('#minesTiles .tile').forEach((t, i) => {
+    t.classList.add('revealed');
+    if (minesMineSet.has(i)) t.classList.add('mine');
+    else if (minesRevealedSet.has(i)) t.classList.add('gem');
+  });
+
+  if (loss) pushRecent({ game: 'Mines', bet: minesBet, profit: -minesBet, winrate: 0, time: nowStamp() });
+
+  if(loss){
+    setTimeout(minesReset, 1200); // ← auto new board
+  }
+}
+
+
 
       function minesCashout() {
         if (!minesActive) return;
@@ -1375,6 +1386,7 @@
         if (profit > 50) pushBigWin({ player: 'You', bet: minesBet, profit: profit, time: nowStamp() });
         pushRecent({ game: 'Mines', bet: minesBet, profit: profit, winrate: 100, time: nowStamp() });
         minesEnd(false);
+        setTimeout(minesReset, 800);
       }
 
       function minesClick(idx, tile) {
@@ -1396,7 +1408,6 @@
 
       $('#minesStart').addEventListener('click', minesStart);
       $('#minesCashout').addEventListener('click', minesCashout);
-      $('#minesReset').addEventListener('click', minesReset);
       $('#minesHalf').addEventListener('click', () => { let v = parseFloat($('#minesBet').value) || 10; $('#minesBet').value = (v/2).toFixed(2); });
       $('#mines2x').addEventListener('click', () => { let v = parseFloat($('#minesBet').value) || 10; $('#minesBet').value = (v*2).toFixed(2); });
       $('#minesMax').addEventListener('click', () => { $('#minesBet').value = balance.toFixed(2); });
@@ -1862,25 +1873,6 @@ genBtn.onclick = async () => {
   startPolling();
 };
 
-let realBalance = 0;
-
-async function loadBalance(){
-  const player = localStorage.getItem("player");
-  if(!player) return;
-
-  const res = await fetch("/api/status/"+player);
-  const data = await res.json();
-
-  if(data.balance != null){
-    realBalance = data.balance;
-    balance = realBalance; // wichtig
-
-    document.getElementById("uiBalance").innerText =
-      "$"+Number(realBalance).toLocaleString();
-  }
-}
-
-setInterval(loadBalance,2000);
 
 function startPolling(){
   verifyInterval = setInterval(async ()=>{
@@ -2172,6 +2164,29 @@ document.addEventListener("keydown", e=>{
   location.reload(); // lädt Seite neu
 }
     </script>
+
+<script>
+async function loadBalance(){
+  const player = localStorage.getItem("player");
+  if(!player) return;
+
+  try{
+    const res = await fetch("/api/status/"+player);
+    const data = await res.json();
+
+    if(data.balance != null){
+      balance = Number(data.balance);
+      updateBalance();
+    }
+  }catch(e){
+    console.log("balance load error");
+  }
+}
+
+setInterval(loadBalance, 2500);
+loadBalance();
+</script>
+
 
 </body>
 </html>
