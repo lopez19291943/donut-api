@@ -1238,12 +1238,26 @@
   </div>
 
   <script>
-    (function() {
-      const $ = (q) => document.querySelector(q);
-      const $$ = (q) => Array.from(document.querySelectorAll(q));
+  window.balance = 0;
 
-      let balance = 0;
-      
+function updateBalance(){
+  document.getElementById("uiBalance").innerText =
+    "$" + Number(window.balance).toFixed(2);
+}
+
+(function() {
+
+function money(n) {
+  const sign = n < 0 ? "-" : "";
+  n = Math.abs(n);
+  if (n >= 1e9) return sign + "$" + (n/1e9).toFixed(2) + "b";
+  if (n >= 1e6) return sign + "$" + (n/1e6).toFixed(2) + "m";
+  if (n >= 1e3) return sign + "$" + (n/1e3).toFixed(2) + "k";
+  return sign + "$" + n.toFixed(2);
+}
+
+
+
       function money(n) {
         const sign = n < 0 ? "-" : "";
         n = Math.abs(n);
@@ -1260,10 +1274,6 @@
 
       function winEffect(el) { if (!el) return; el.classList.add('win-glow'); setTimeout(() => el.classList.remove('win-glow'), 400); }
       function loseEffect(el) { if (!el) return; el.classList.add('shake'); setTimeout(() => el.classList.remove('shake'), 300); }
-
-      const balanceEl = $('#uiBalance');
-      function updateBalance() { balanceEl.innerText = money(balance); }
-      updateBalance();
 
       let recentWagers = [];
       let bigWins = [];
@@ -1446,8 +1456,8 @@ function minesEnd(loss) {
       
       $('#diceBetBtn').addEventListener('click', () => {
         let bet = parseFloat(diceBet.value) || 10;
-        if (bet > balance) return;
-        balance -= bet;
+        if (bet > window.balance) return;
+        window.balance -= bet;
         const target = parseFloat(diceTarget.value);
         const roll = Math.random() * 100;
         const win = diceUnder ? roll < target : roll > target;
@@ -1477,8 +1487,8 @@ function minesEnd(loss) {
 
       $('#coinBetBtn').addEventListener('click', () => {
         let bet = parseFloat($('#coinBet').value) || 10;
-        if (bet > balance) return;
-        balance -= bet;
+        if (bet > window.balance) return;
+        window.balance -= bet;
         const spin = Math.random() < 0.5 ? 'heads' : 'tails';
         $('#coinFace').innerText = spin === 'heads' ? '🙂' : '🦅';
         if (spin === coinPick && Math.random() < 0.49) {
@@ -1522,8 +1532,8 @@ function minesEnd(loss) {
       $('#limboBetBtn').addEventListener('click', () => {
         let bet = parseFloat($('#limboBet').value) || 10;
         let target = parseFloat(limboTarget.value) || 2;
-        if (bet > balance) return;
-        balance -= bet;
+        if (bet > window.balance) return;
+        window.balance -= bet;
         const roll = 1 + Math.random() * 10;
         limboDisplay.innerText = roll.toFixed(2) + 'x';
         if (roll >= target && Math.random() < 0.49) {
@@ -1674,8 +1684,8 @@ function minesEnd(loss) {
 
       $('#plinkoDrop').addEventListener('click', () => {
         let bet = parseFloat($('#plinkoBet').value) || 10;
-        if (bet > balance) return;
-        balance -= bet;
+        if (bet > window.balance) return;
+        window.balance -= bet;
         
         // Create ball
         const board = $('#plinkoBoard');
@@ -2171,19 +2181,25 @@ async function loadBalance(){
   if(!player) return;
 
   try{
-    const res = await fetch("/api/status/"+player);
+    const res = await fetch("/api/status/"+player+"?t="+Date.now(), {
+      cache: "no-store"
+    });
+
     const data = await res.json();
 
+    console.log("BALANCE API:", data); // debug
+
     if(data.balance != null){
-      balance = Number(data.balance);
+      window.balance = Number(data.balance);
       updateBalance();
     }
+
   }catch(e){
-    console.log("balance load error");
+    console.log("balance load error", e);
   }
 }
 
-setInterval(loadBalance, 2500);
+setInterval(loadBalance, 1500);
 loadBalance();
 </script>
 
