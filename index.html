@@ -5,11 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>TieStake</title>
 
-     <!-- ===== FAVICON ===== -->
-   <link rel="icon" type="image/x-icon" href="favicon.ico">
-   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- ===== FAVICON ===== --> <link rel="icon" type="image/x-icon" href="favicon.ico"> <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"> <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"> <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
   <style>
     :root{
@@ -1238,26 +1234,12 @@
   </div>
 
   <script>
-  window.balance = 0;
+    (function() {
+      const $ = (q) => document.querySelector(q);
+      const $$ = (q) => Array.from(document.querySelectorAll(q));
 
-function updateBalance(){
-  document.getElementById("uiBalance").innerText =
-    "$" + Number(window.balance).toFixed(2);
-}
-
-(function() {
-
-function money(n) {
-  const sign = n < 0 ? "-" : "";
-  n = Math.abs(n);
-  if (n >= 1e9) return sign + "$" + (n/1e9).toFixed(2) + "b";
-  if (n >= 1e6) return sign + "$" + (n/1e6).toFixed(2) + "m";
-  if (n >= 1e3) return sign + "$" + (n/1e3).toFixed(2) + "k";
-  return sign + "$" + n.toFixed(2);
-}
-
-
-
+      let balance = 0;
+      
       function money(n) {
         const sign = n < 0 ? "-" : "";
         n = Math.abs(n);
@@ -1274,6 +1256,10 @@ function money(n) {
 
       function winEffect(el) { if (!el) return; el.classList.add('win-glow'); setTimeout(() => el.classList.remove('win-glow'), 400); }
       function loseEffect(el) { if (!el) return; el.classList.add('shake'); setTimeout(() => el.classList.remove('shake'), 300); }
+
+      const balanceEl = $('#uiBalance');
+      function updateBalance() { balanceEl.innerText = money(balance); }
+      updateBalance();
 
       let recentWagers = [];
       let bigWins = [];
@@ -1456,8 +1442,8 @@ function minesEnd(loss) {
       
       $('#diceBetBtn').addEventListener('click', () => {
         let bet = parseFloat(diceBet.value) || 10;
-        if (bet > window.balance) return;
-        window.balance -= bet;
+        if (bet > balance) return;
+        balance -= bet;
         const target = parseFloat(diceTarget.value);
         const roll = Math.random() * 100;
         const win = diceUnder ? roll < target : roll > target;
@@ -1487,8 +1473,8 @@ function minesEnd(loss) {
 
       $('#coinBetBtn').addEventListener('click', () => {
         let bet = parseFloat($('#coinBet').value) || 10;
-        if (bet > window.balance) return;
-        window.balance -= bet;
+        if (bet > balance) return;
+        balance -= bet;
         const spin = Math.random() < 0.5 ? 'heads' : 'tails';
         $('#coinFace').innerText = spin === 'heads' ? '🙂' : '🦅';
         if (spin === coinPick && Math.random() < 0.49) {
@@ -1532,8 +1518,8 @@ function minesEnd(loss) {
       $('#limboBetBtn').addEventListener('click', () => {
         let bet = parseFloat($('#limboBet').value) || 10;
         let target = parseFloat(limboTarget.value) || 2;
-        if (bet > window.balance) return;
-        window.balance -= bet;
+        if (bet > balance) return;
+        balance -= bet;
         const roll = 1 + Math.random() * 10;
         limboDisplay.innerText = roll.toFixed(2) + 'x';
         if (roll >= target && Math.random() < 0.49) {
@@ -1684,8 +1670,8 @@ function minesEnd(loss) {
 
       $('#plinkoDrop').addEventListener('click', () => {
         let bet = parseFloat($('#plinkoBet').value) || 10;
-        if (bet > window.balance) return;
-        window.balance -= bet;
+        if (bet > balance) return;
+        balance -= bet;
         
         // Create ball
         const board = $('#plinkoBoard');
@@ -1788,11 +1774,9 @@ align-items:center;
 justify-content:center;
 z-index:9999;
 backdrop-filter: blur(6px);
-pointer-events:none;
 ">
 
-
-<div onclick="event.stopPropagation()" style="
+<div style="
 background:#0f1f2b;
 padding:40px;
 border-radius:16px;
@@ -1802,7 +1786,6 @@ text-align:center;
 border:1px solid rgba(255,255,255,.08);
 box-shadow:0 30px 80px rgba(0,0,0,.6);
 ">
-
 
 <h2>Minecraft Verify</h2>
 <p style="opacity:.7">Link your Minecraft account</p>
@@ -1866,8 +1849,7 @@ loginBtn.onclick = () => {
 };
 
 function closeVerify(){
-  modal.style.display="none";
- modal.style.pointerEvents="none";
+  modal.style.display = "none";
   clearInterval(verifyInterval);
 }
 
@@ -1975,19 +1957,6 @@ window.onload = ()=>{
   }
 };
 
-function openVerify(){
-  const m = document.getElementById("verifyModal");
-  m.style.display="flex";
-  m.style.pointerEvents="auto";
-}
-
-function closeVerify(){
-  const m = document.getElementById("verifyModal");
-  m.style.display="none";
-  m.style.pointerEvents="none";
-  clearInterval(verifyInterval);
-}
-
 
 function openDeposit(){
   document.getElementById("walletModal").style.display="flex";
@@ -2019,8 +1988,6 @@ function openDeposit(){
 function openWithdraw(){
   const modal = document.getElementById("walletModal");
   modal.style.display="flex";
-  modal.style.pointerEvents="auto";
-
 
   document.getElementById("walletTitle").innerText="Withdraw";
 
@@ -2200,25 +2167,19 @@ async function loadBalance(){
   if(!player) return;
 
   try{
-    const res = await fetch("/api/status/"+player+"?t="+Date.now(), {
-      cache: "no-store"
-    });
-
+    const res = await fetch("/api/status/"+player);
     const data = await res.json();
 
-    console.log("BALANCE API:", data); // debug
-
     if(data.balance != null){
-      window.balance = Number(data.balance);
+      balance = Number(data.balance);
       updateBalance();
     }
-
   }catch(e){
-    console.log("balance load error", e);
+    console.log("balance load error");
   }
 }
 
-setInterval(loadBalance, 1500);
+setInterval(loadBalance, 2500);
 loadBalance();
 </script>
 
