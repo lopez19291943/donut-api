@@ -1788,9 +1788,11 @@ align-items:center;
 justify-content:center;
 z-index:9999;
 backdrop-filter: blur(6px);
+pointer-events:none;
 ">
 
-<div style="
+
+<div onclick="event.stopPropagation()" style="
 background:#0f1f2b;
 padding:40px;
 border-radius:16px;
@@ -1800,6 +1802,7 @@ text-align:center;
 border:1px solid rgba(255,255,255,.08);
 box-shadow:0 30px 80px rgba(0,0,0,.6);
 ">
+
 
 <h2>Minecraft Verify</h2>
 <p style="opacity:.7">Link your Minecraft account</p>
@@ -1863,7 +1866,8 @@ loginBtn.onclick = () => {
 };
 
 function closeVerify(){
-  modal.style.display = "none";
+  modal.style.display="none";
+ modal.style.pointerEvents="none";
   clearInterval(verifyInterval);
 }
 
@@ -1971,6 +1975,19 @@ window.onload = ()=>{
   }
 };
 
+function openVerify(){
+  const m = document.getElementById("verifyModal");
+  m.style.display="flex";
+  m.style.pointerEvents="auto";
+}
+
+function closeVerify(){
+  const m = document.getElementById("verifyModal");
+  m.style.display="none";
+  m.style.pointerEvents="none";
+  clearInterval(verifyInterval);
+}
+
 
 function openDeposit(){
   document.getElementById("walletModal").style.display="flex";
@@ -2002,6 +2019,8 @@ function openDeposit(){
 function openWithdraw(){
   const modal = document.getElementById("walletModal");
   modal.style.display="flex";
+  modal.style.pointerEvents="auto";
+
 
   document.getElementById("walletTitle").innerText="Withdraw";
 
