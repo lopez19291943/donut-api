@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>TieStake</title>
 
-  <!-- ===== FAVICON ===== --> <link rel="icon" type="image/x-icon" href="favicon.ico"> <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"> <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"> <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- ===== FAVICON ===== --> 
+  <link rel="icon" type="image/x-icon" href="favicon.ico"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"> 
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"> 
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
   <style>
     :root{
@@ -81,6 +85,11 @@
       border:1px solid rgba(255,255,255,.07);
       color:rgba(230,245,255,.9);
       font-weight:900;
+      transition: all 0.2s ease;
+    }
+    .balance:hover {
+      border-color: var(--green);
+      box-shadow: 0 0 20px rgba(33, 227, 90, 0.2);
     }
     .login{
       background:linear-gradient(180deg, rgba(47,125,255,1), rgba(29,97,210,1));
@@ -91,6 +100,11 @@
       font-weight:800;
       cursor:pointer;
       box-shadow: 0 10px 18px rgba(0,0,0,.25);
+      transition: all 0.2s ease;
+    }
+    .login:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 25px rgba(47,125,255,0.3);
     }
     .login:active{transform:translateY(1px)}
 
@@ -141,6 +155,7 @@
     .nav a:hover{
       background:rgba(255,255,255,.03);
       border-color:rgba(255,255,255,.05);
+      transform: translateX(2px);
     }
     .nav a.active{
       background:rgba(255,255,255,.04);
@@ -201,6 +216,10 @@
       border-radius:12px;
       background:rgba(255,255,255,.02);
       border:1px solid rgba(255,255,255,.06);
+      transition: all 0.2s ease;
+    }
+    .chat-head:hover {
+      border-color: var(--green);
     }
     .chat-head .left{
       display:flex;align-items:center;gap:10px;
@@ -223,6 +242,10 @@
       display:grid;place-items:center;
       color:rgba(255,255,255,.7);
       font-weight:900;
+      transition: all 0.2s ease;
+    }
+    .chev:hover {
+      transform: translateX(2px);
     }
 
     .rain{
@@ -231,6 +254,11 @@
       background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
       border:1px solid rgba(255,255,255,.07);
       box-shadow: var(--shadow);
+      transition: all 0.2s ease;
+    }
+    .rain:hover {
+      border-color: var(--green);
+      transform: translateY(-2px);
     }
     .rain .title{
       display:flex; align-items:center; justify-content:space-between;
@@ -316,6 +344,11 @@
       border:1px solid rgba(255,255,255,.07);
       border-radius:var(--radius2);
       box-shadow: var(--shadow);
+      transition: all 0.2s ease;
+    }
+    .card:hover {
+      border-color: rgba(33, 227, 90, 0.3);
+      transform: translateY(-2px);
     }
 
     /* HOME */
@@ -364,6 +397,11 @@
       font-weight:950;
       cursor:pointer;
       box-shadow: 0 14px 25px rgba(0,0,0,.25);
+      transition: all 0.2s ease;
+    }
+    .start:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 30px rgba(33,227,90,0.3);
     }
     .start:active{transform:translateY(1px)}
     .hero .art{
@@ -408,7 +446,11 @@
       cursor:pointer;
       transition:.12s;
     }
-    .game:hover{transform:translateY(-1px)}
+    .game:hover{
+      transform:translateY(-4px);
+      border-color: var(--green);
+      box-shadow: 0 8px 30px rgba(33,227,90,0.2);
+    }
     .game:active{transform:translateY(0px)}
     .game .img{
       height:78px;
@@ -478,7 +520,11 @@
       position:relative;
       overflow:hidden;
     }
-    .tile:hover{transform:translateY(-1px)}
+    .tile:hover{
+      transform:translateY(-2px);
+      border-color: var(--green);
+      box-shadow: 0 0 30px rgba(33,227,90,0.2);
+    }
     .tile:active{transform:translateY(0px)}
     .tile.revealed{
       cursor:default;
@@ -512,6 +558,10 @@
       border-radius:16px;
       background:rgba(0,0,0,.10);
       border:1px solid rgba(255,255,255,.06);
+      transition: all 0.2s ease;
+    }
+    .panel:hover {
+      border-color: rgba(33,227,90,0.2);
     }
     .label{
       font-weight:950;
@@ -529,6 +579,11 @@
       color:rgba(255,255,255,.9);
       font-weight:900;
       outline:none;
+      transition: all 0.2s ease;
+    }
+    .input:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 20px rgba(33,227,90,0.2);
     }
     .row3{
       display:grid;
@@ -544,6 +599,12 @@
       padding:10px 10px;
       font-weight:950;
       cursor:pointer;
+      transition: all 0.2s ease;
+    }
+    .smallbtn:hover {
+      background: rgba(33,227,90,0.1);
+      border-color: var(--green);
+      transform: translateY(-1px);
     }
     .smallbtn:active{transform:translateY(1px)}
     select.input{
@@ -570,6 +631,11 @@
       letter-spacing:.6px;
       cursor:pointer;
       margin-top:auto;
+      transition: all 0.2s ease;
+    }
+    .betbtn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(33,227,90,0.2);
     }
     .betbtn.primary{
       background:linear-gradient(180deg, rgba(33,227,90,.18), rgba(33,227,90,.08));
@@ -580,6 +646,10 @@
       background:linear-gradient(180deg, rgba(255,77,77,.12), rgba(255,77,77,.06));
       border-color:rgba(255,77,77,.18);
       color:#ffd0d0;
+    }
+    .betbtn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
     }
 
     .status{
@@ -630,6 +700,11 @@
       font-weight:900;
       cursor:pointer;
       user-select:none;
+      transition: all 0.2s ease;
+    }
+    .chip:hover {
+      border-color: var(--green);
+      transform: translateY(-1px);
     }
     .chip.active{
       background:rgba(47,125,255,.14);
@@ -665,6 +740,11 @@
       color:rgba(200,230,255,.75);
       font-weight:900;
       cursor:pointer;
+      transition: all 0.2s ease;
+    }
+    .refresh:hover {
+      border-color: var(--green);
+      transform: rotate(180deg);
     }
 
     table{
@@ -726,6 +806,7 @@
       background: rgba(0,0,0,0.2);
       border-radius: 20px;
       margin: 20px 0;
+      position: relative;
     }
     .plinko-row {
       display: flex;
@@ -738,6 +819,11 @@
       background: rgba(255,255,255,0.2);
       border-radius: 50%;
       box-shadow: 0 0 10px rgba(255,255,255,0.1);
+      transition: all 0.2s ease;
+    }
+    .plinko-peg:hover {
+      background: var(--green);
+      box-shadow: 0 0 20px var(--green);
     }
     .plinko-ball {
       width: 16px;
@@ -763,6 +849,10 @@
       color: var(--text);
       font-weight: 800;
       cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .risk-btn:hover {
+      border-color: var(--green);
     }
     .risk-btn.active {
       background: rgba(33,227,90,.15);
@@ -782,6 +872,10 @@
       color: var(--text);
       font-weight: 800;
       cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .row-btn:hover {
+      border-color: var(--blue);
     }
     .row-btn.active {
       background: rgba(47,125,255,.15);
@@ -802,6 +896,7 @@
       background: var(--green);
       border-radius: 2px;
       width: 50%;
+      transition: width 0.2s ease;
     }
     .dice-marker {
       position: absolute;
@@ -810,6 +905,7 @@
       height: 20px;
       background: white;
       transform: translateX(-50%);
+      transition: left 0.2s ease;
     }
     .dice-values {
       display: flex;
@@ -817,6 +913,116 @@
       margin-top: 10px;
       color: var(--muted);
       font-size: 12px;
+    }
+
+    /* Modal Styles */
+    #verifyModal, #walletModal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.8);
+      backdrop-filter: blur(10px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    #verifyModal > div, #walletModal > div {
+      background: #0f1f2b;
+      padding: 40px;
+      border-radius: 16px;
+      width: 420px;
+      max-width: 95%;
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 30px 80px rgba(0,0,0,.6);
+      animation: slideIn 0.3s ease-out;
+    }
+
+    #genCodeBtn {
+      background: var(--blue);
+      border: none;
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-weight: 800;
+      color: white;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+      transition: all 0.2s ease;
+    }
+
+    #genCodeBtn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(47,125,255,0.3);
+    }
+
+    #verifyCode {
+      background: black;
+      padding: 15px;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 22px;
+      letter-spacing: 3px;
+    }
+
+    #walletMenu {
+      position: absolute;
+      right: 0;
+      top: 45px;
+      background: #0f1f2b;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 12px;
+      padding: 10px;
+      width: 170px;
+      z-index: 999;
+      animation: slideIn 0.2s ease-out;
+    }
+
+    #walletMenu button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 6px;
+      border-radius: 8px;
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    #walletMenu button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(33,227,90,0.3);
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes winGlow {
+      0% { box-shadow: 0 0 0 0 rgba(33,227,90,0.5); }
+      50% { box-shadow: 0 0 30px 10px rgba(33,227,90,0.5); }
+      100% { box-shadow: 0 0 0 0 rgba(33,227,90,0); }
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+
+    .win-glow {
+      animation: winGlow 0.6s ease-out;
+    }
+
+    .shake {
+      animation: shake 0.3s ease-in-out;
     }
   </style>
 </head>
@@ -829,7 +1035,7 @@
     </div>
 
     <div class="rightbar">
-      <div class="balance" id="uiBalance">Loading...</div>
+      <div class="balance" id="uiBalance">$0.00</div>
       <button class="login" id="btnLogin">Login</button>
     </div>
   </div>
@@ -957,7 +1163,7 @@
         </div>
       </section>
 
-      <!-- DICE (updated) -->
+      <!-- DICE -->
       <section id="view-dice" class="view">
         <div class="game-wrap">
           <div class="card big-center">
@@ -1042,7 +1248,7 @@
         </div>
       </section>
 
-      <!-- LIMBO (updated) -->
+      <!-- LIMBO -->
       <section id="view-limbo" class="view">
         <div class="game-wrap">
           <div class="card big-center">
@@ -1114,7 +1320,7 @@
         </div>
       </section>
 
-      <!-- CHICKEN (fixed) -->
+      <!-- CHICKEN -->
       <section id="view-chicken" class="view">
         <div class="game-wrap">
           <div class="card big-center">
@@ -1146,7 +1352,7 @@
         </div>
       </section>
 
-      <!-- PLINKO (fixed with balls) -->
+      <!-- PLINKO -->
       <section id="view-plinko" class="view">
         <div class="card" style="padding:18px">
           <div style="font-size:22px; font-weight:1000; margin-bottom:16px;">Plinko</div>
@@ -1233,959 +1439,1008 @@
     </aside>
   </div>
 
-  <script>
-    (function() {
-      const $ = (q) => document.querySelector(q);
-      const $$ = (q) => Array.from(document.querySelectorAll(q));
-      const balanceEl = document.getElementById("uiBalance");
-
-      window.balance = 0;
-      
-      function money(n) {
-        const sign = n < 0 ? "-" : "";
-        n = Math.abs(n);
-        if (n >= 1e9) return sign + "$" + (n/1e9).toFixed(2) + "b";
-        if (n >= 1e6) return sign + "$" + (n/1e6).toFixed(2) + "m";
-        if (n >= 1e3) return sign + "$" + (n/1e3).toFixed(2) + "k";
-        return sign + "$" + n.toFixed(2);
-      }
-
-      function nowStamp() {
-        const d = new Date();
-        return d.toLocaleDateString('de-DE') + ', ' + d.toLocaleTimeString('de-DE', {hour:'2-digit', minute:'2-digit'});
-      }
-
-      function winEffect(el) { if (!el) return; el.classList.add('win-glow'); setTimeout(() => el.classList.remove('win-glow'), 400); }
-      function loseEffect(el) { if (!el) return; el.classList.add('shake'); setTimeout(() => el.classList.remove('shake'), 300); }
-
-      window.updateBalance = function(){
-         balanceEl.innerText = money(window.balance);
-       }
-
-      updateBalance();
-
-      let recentWagers = [];
-      let bigWins = [];
-
-      function pushRecent(row) { recentWagers.unshift(row); recentWagers = recentWagers.slice(0, 10); renderTables(); }
-      function pushBigWin(row) { bigWins.unshift(row); bigWins = bigWins.slice(0, 10); renderTables(); }
-
-      function renderTables() {
-        const big = $('#tblBigWins');
-        const rec = $('#tblRecent');
-        if (!big || !rec) return;
-
-        if (bigWins.length === 0) big.innerHTML = `<tr><td style="color:rgba(200,230,255,.45)" colspan="5">No big wins yet.</td></tr>`;
-        else {
-          big.innerHTML = bigWins.map(r => `<tr><td style="width:30%"><b>${r.player}</b></td><td style="width:18%;">${money(r.bet)}</td><td style="width:18%;" class="green">+${money(r.profit)}</td><td style="width:12%;">100%</td><td style="width:22%;">${r.time}</td></tr>`).join('');
-        }
-
-        if (recentWagers.length === 0) rec.innerHTML = `<tr><td style="color:rgba(200,230,255,.45)" colspan="5">No wagers yet.</td></tr>`;
-        else {
-          rec.innerHTML = recentWagers.map(r => `<tr><td style="width:30%"><b>${r.game}</b></td><td style="width:18%;">${money(r.bet)}</td><td style="width:18%;" class="${r.profit>=0?'green':'red'}">${r.profit>=0?'+':'-'}${money(Math.abs(r.profit))}</td><td style="width:12%;">${r.winrate}%</td><td style="width:22%;">${r.time}</td></tr>`).join('');
-        }
-      }
-
-      // VIEW TOGGLING
-      const links = $$('.nav a[data-view]');
-      const views = $$('.view');
-      function show(viewName) {
-        views.forEach(v => v.classList.remove('active'));
-        const el = document.getElementById('view-' + viewName);
-        if (el) el.classList.add('active');
-        links.forEach(l => l.classList.remove('active'));
-        const active = links.find(l => l.dataset.view === viewName);
-        if (active) active.classList.add('active');
-      }
-
-      links.forEach(l => l.addEventListener('click', (e) => { e.preventDefault(); show(l.dataset.view); }));
-      $$('[data-jump]').forEach(el => el.addEventListener('click', () => show(el.dataset.jump)));
-
-      // Leaderboard tabs
-      $$('[data-leaderboard]').forEach((btn, idx) => {
-        btn.addEventListener('click', function() {
-          $$('[data-leaderboard]').forEach(b => b.classList.remove('active'));
-          this.classList.add('active');
-          const tbody = $('#leaderboardBody');
-          if (this.dataset.leaderboard === 'daily') {
-            tbody.innerHTML = `<tr><td>Soon</td><td><b>$7,465,749,130,298</b></td><td><b>$5,000,000</b></td></tr><tr><td>Soon</td><td><b>$6,221,504,550,021</b></td><td><b>$2,000,000</b></td></tr><tr><td>Soon</td><td><b>$5,802,001,004,812</b></td><td><b>$1,000,000</b></td></tr><tr><td>Soon</td><td><b>$5,120,404,118,990</b></td><td><b>$500,000</b></td></tr>`;
-          } else if (this.dataset.leaderboard === 'weekly') {
-            tbody.innerHTML = `<tr><td>Soon</td><td><b>$12,401,550,021</b></td><td><b>$3,000,000</b></td></tr><tr><td>Soon</td><td><b>$8,802,004,812</b></td><td><b>$1,500,000</b></td></tr><tr><td>Soon</td><td><b>$7,130,298</b></td><td><b>$800,000</b></td></tr><tr><td>Soon</td><td><b>$4,404,118,990</b></td><td><b>$300,000</b></td></tr>`;
-          } else {
-            tbody.innerHTML = `<tr><td>Soon</td><td><b>$15,801,004,812</b></td><td><b>$6,000,000</b></td></tr><tr><td>Soon</td><td><b>$12,465,749,130,298</b></td><td><b>$4,000,000</b></td></tr><tr><td>Soon</td><td><b>$9,221,504,550</b></td><td><b>$2,500,000</b></td></tr><tr><td>Soon</td><td><b>$6,120,404,118</b></td><td><b>$1,200,000</b></td></tr>`;
-          }
-        });
-      });
-
-      // MINES
-      let minesActive = false, minesBoard = [], minesMines = 3, minesBet = 10, minesRevealed = 0, minesMult = 1, minesMineSet = new Set(), minesRevealedSet = new Set();
-      const minesTiles = $('#minesTiles');
-
-      function minesReset() {
-        minesActive = false; minesRevealed = 0; minesMineSet.clear(); minesRevealedSet.clear(); minesMult = 1;
-        $('#minesMult').innerText = 'x1.00'; $('#minesPotential').innerText = money(0);
-        $('#minesStart').disabled = false; $('#minesCashout').disabled = true;
-        minesTiles.innerHTML = '';
-        for (let i = 0; i < 25; i++) {
-          const t = document.createElement('div');
-          t.className = 'tile'; t.dataset.idx = i;
-          t.onclick = () => minesClick(i, t);
-          minesTiles.appendChild(t);
-          minesBoard[i] = { mine: false };
-        }
-      }
-
-      function minesMultiplier(safe, total) { return +(1 + safe * (0.2 + total * 0.03)).toFixed(2); }
-
-      function minesStart() {
-        if (minesActive) return;
-        minesBet = parseFloat($('#minesBet').value) || 10;
-        minesMines = parseInt($('#minesCount').value) || 3;
-        if (minesBet > balance) { alert('Insufficient balance'); return; }
-        balance -= minesBet; updateBalance();
-        minesMineSet.clear();
-        while (minesMineSet.size < minesMines) minesMineSet.add(Math.floor(Math.random() * 25));
-        minesActive = true; minesRevealed = 0; minesRevealedSet.clear(); minesMult = 1;
-        $('#minesStart').disabled = true; $('#minesCashout').disabled = false;
-        minesUpdateUI();
-      }
-
-      function minesUpdateUI() {
-        $('#minesMult').innerText = 'x' + minesMult.toFixed(2);
-        $('#minesPotential').innerText = money(minesBet * minesMult);
-      }
-
-function minesEnd(loss) {
-  minesActive = false;
-
-  $('#minesStart').disabled = false;
-  $('#minesCashout').disabled = true;
-
-  $$('#minesTiles .tile').forEach((t, i) => {
-    t.classList.add('revealed');
-    if (minesMineSet.has(i)) t.classList.add('mine');
-    else if (minesRevealedSet.has(i)) t.classList.add('gem');
-  });
-
-  if (loss) pushRecent({ game: 'Mines', bet: minesBet, profit: -minesBet, winrate: 0, time: nowStamp() });
-
-  if(loss){
-    setTimeout(minesReset, 1200); // ← auto new board
-  }
-}
-
-
-
-      function minesCashout() {
-        if (!minesActive) return;
-        const payout = minesBet * minesMult;
-        const profit = payout - minesBet;
-        balance += payout; updateBalance();
-        winEffect($('#view-mines'));
-        if (profit > 50) pushBigWin({ player: 'You', bet: minesBet, profit: profit, time: nowStamp() });
-        pushRecent({ game: 'Mines', bet: minesBet, profit: profit, winrate: 100, time: nowStamp() });
-        minesEnd(false);
-        setTimeout(minesReset, 800);
-      }
-
-      function minesClick(idx, tile) {
-        if (!minesActive || minesRevealedSet.has(idx)) return;
-        tile.classList.add('revealed');
-        if (minesMineSet.has(idx)) {
-          tile.classList.add('mine');
-          loseEffect($('#view-mines'));
-          minesEnd(true);
-          return;
-        }
-        minesRevealedSet.add(idx);
-        tile.classList.add('gem');
-        minesRevealed++;
-        minesMult = minesMultiplier(minesRevealed, minesMines);
-        minesUpdateUI();
-        if (minesRevealed === 25 - minesMines) minesCashout();
-      }
-
-      $('#minesStart').addEventListener('click', minesStart);
-      $('#minesCashout').addEventListener('click', minesCashout);
-      $('#minesHalf').addEventListener('click', () => { let v = parseFloat($('#minesBet').value) || 10; $('#minesBet').value = (v/2).toFixed(2); });
-      $('#mines2x').addEventListener('click', () => { let v = parseFloat($('#minesBet').value) || 10; $('#minesBet').value = (v*2).toFixed(2); });
-      $('#minesMax').addEventListener('click', () => { $('#minesBet').value = balance.toFixed(2); });
-
-      // DICE (updated)
-      let diceUnder = true;
-      const diceTarget = $('#diceTarget');
-      const diceTargetValue = $('#diceTargetValue');
-      const diceNumber = $('#diceNumber');
-      const diceSliderFill = $('#diceSliderFill');
-      const diceMarker = $('#diceMarker');
-      const diceWinChance = $('#diceWinChance');
-      const diceMultiplier = $('#diceMultiplier');
-      const diceProfit = $('#diceProfit');
-      const diceBet = $('#diceBet');
-
-      function updateDiceUI() {
-        const target = parseFloat(diceTarget.value);
-        diceTargetValue.innerText = target.toFixed(2);
-        diceNumber.innerText = target.toFixed(2);
-        const chance = diceUnder ? target : 100 - target;
-        const mult = (99 / chance).toFixed(4);
-        diceWinChance.innerText = chance.toFixed(1) + '%';
-        diceMultiplier.innerText = mult + 'x';
-        const bet = parseFloat(diceBet.value) || 10;
-        const profit = (bet * mult - bet).toFixed(2);
-        diceProfit.innerText = '$' + profit;
-        diceSliderFill.style.width = target + '%';
-        diceMarker.style.left = target + '%';
-      }
-
-      $('#diceUnderBtn').addEventListener('click', () => { diceUnder = true; $('#diceUnderBtn').classList.add('active'); $('#diceOverBtn').classList.remove('active'); updateDiceUI(); });
-      $('#diceOverBtn').addEventListener('click', () => { diceUnder = false; $('#diceOverBtn').classList.add('active'); $('#diceUnderBtn').classList.remove('active'); updateDiceUI(); });
-      diceTarget.addEventListener('input', updateDiceUI);
-      diceBet.addEventListener('input', updateDiceUI);
-      
-      $('#diceBetBtn').addEventListener('click', () => {
-        let bet = parseFloat(diceBet.value) || 10;
-        if (bet > balance) return;
-        balance -= bet;
-        const target = parseFloat(diceTarget.value);
-        const roll = Math.random() * 100;
-        const win = diceUnder ? roll < target : roll > target;
-        const mult = parseFloat(diceMultiplier.innerText);
-        if (win && Math.random() < 0.49) {
-          balance += bet * mult;
-          winEffect($('#view-dice'));
-        } else {
-          loseEffect($('#view-dice'));
-        }
-        updateBalance();
-      });
-
-      // COINFLIP
-      let coinPick = 'heads';
-      $('#pickHeads').addEventListener('click', function() { coinPick = 'heads'; $('#pickHeads').classList.add('active'); $('#pickTails').classList.remove('active'); });
-      $('#pickTails').addEventListener('click', function() { coinPick = 'tails'; $('#pickTails').classList.add('active'); $('#pickHeads').classList.remove('active'); });
-
-      $$('[data-coinbet]').forEach(b => {
-        b.addEventListener('click', () => {
-          const v = parseFloat($('#coinBet').value) || 10;
-          if (b.dataset.coinbet === 'half') $('#coinBet').value = (v/2).toFixed(2);
-          if (b.dataset.coinbet === '2x') $('#coinBet').value = (v*2).toFixed(2);
-          if (b.dataset.coinbet === 'max') $('#coinBet').value = balance.toFixed(2);
-        });
-      });
-
-      $('#coinBetBtn').addEventListener('click', () => {
-        let bet = parseFloat($('#coinBet').value) || 10;
-        if (bet > balance) return;
-        balance -= bet;
-        const spin = Math.random() < 0.5 ? 'heads' : 'tails';
-        $('#coinFace').innerText = spin === 'heads' ? '🙂' : '🦅';
-        if (spin === coinPick && Math.random() < 0.49) {
-          balance += bet * 2;
-          $('#coinResult').innerHTML = '<span class="green">WIN</span>';
-          winEffect($('#view-coinflip'));
-        } else {
-          $('#coinResult').innerHTML = '<span class="red">LOSE</span>';
-          loseEffect($('#view-coinflip'));
-        }
-        updateBalance();
-      });
-
-      // LIMBO (updated)
-      const limboTarget = $('#limboTarget');
-      const limboChance = $('#limboChance');
-      const limboDisplay = $('#limboDisplay');
-      const limboTargetDisplay = $('#limboTargetDisplay');
-      const limboChanceDisplay = $('#limboChanceDisplay');
-
-      function updateLimbo() {
-        let t = parseFloat(limboTarget.value) || 2;
-        t = Math.max(1.1, Math.min(100, t));
-        const chance = (99 / t).toFixed(2);
-        limboChance.innerText = chance + '%';
-        limboTargetDisplay.innerText = t.toFixed(2) + 'x';
-        limboChanceDisplay.innerText = chance + '%';
-      }
-
-      limboTarget.addEventListener('input', updateLimbo);
-      
-      $$('[data-limbobet]').forEach(b => {
-        b.addEventListener('click', () => {
-          const v = parseFloat($('#limboBet').value) || 10;
-          if (b.dataset.limbobet === 'half') $('#limboBet').value = (v/2).toFixed(2);
-          if (b.dataset.limbobet === '2x') $('#limboBet').value = (v*2).toFixed(2);
-          if (b.dataset.limbobet === 'max') $('#limboBet').value = balance.toFixed(2);
-        });
-      });
-
-      $('#limboBetBtn').addEventListener('click', () => {
-        let bet = parseFloat($('#limboBet').value) || 10;
-        let target = parseFloat(limboTarget.value) || 2;
-        if (bet > balance) return;
-        balance -= bet;
-        const roll = 1 + Math.random() * 10;
-        limboDisplay.innerText = roll.toFixed(2) + 'x';
-        if (roll >= target && Math.random() < 0.49) {
-          balance += bet * target;
-          winEffect($('#view-limbo'));
-        } else {
-          loseEffect($('#view-limbo'));
-        }
-        updateBalance();
-      });
-
-      // BLACKJACK
-      let bjActive = false, bjBet = 10, bjPlayer = [], bjDealer = [];
-      $('#bjDeal').addEventListener('click', () => {
-        bjBet = parseFloat($('#bjBet').value) || 10;
-        if (bjBet > balance) return;
-        balance -= bjBet;
-        bjActive = true;
-        bjPlayer = [Math.floor(Math.random()*10)+2, Math.floor(Math.random()*10)+2];
-        bjDealer = [Math.floor(Math.random()*10)+2, Math.floor(Math.random()*10)+2];
-        $('#bjPlayer').innerText = bjPlayer.join(' ');
-        $('#bjDealer').innerText = bjDealer[0] + ' ?';
-        $('#bjPlayerScore').innerText = 'Score: ' + bjPlayer.reduce((a,b)=>a+b,0);
-        $('#bjDealerScore').innerText = 'Score: ?';
-        $('#bjHit').disabled = false;
-        $('#bjStand').disabled = false;
-        $('#bjMsg').innerText = '';
-      });
-      $('#bjHit').addEventListener('click', () => {
-        if (!bjActive) return;
-        bjPlayer.push(Math.floor(Math.random()*10)+2);
-        $('#bjPlayer').innerText = bjPlayer.join(' ');
-        const score = bjPlayer.reduce((a,b)=>a+b,0);
-        $('#bjPlayerScore').innerText = 'Score: ' + score;
-        if (score > 21) { bjActive = false; $('#bjMsg').innerHTML = '<span class="red">Bust</span>'; loseEffect($('#view-blackjack')); $('#bjHit').disabled = true; $('#bjStand').disabled = true; }
-      });
-      $('#bjStand').addEventListener('click', () => {
-        if (!bjActive) return;
-        const pScore = bjPlayer.reduce((a,b)=>a+b,0);
-        const dScore = bjDealer.reduce((a,b)=>a+b,0);
-        $('#bjDealer').innerText = bjDealer.join(' ');
-        $('#bjDealerScore').innerText = 'Score: ' + dScore;
-        if (pScore > dScore && pScore <= 21) {
-          balance += bjBet * 2;
-          $('#bjMsg').innerHTML = '<span class="green">Win</span>';
-          winEffect($('#view-blackjack'));
-        } else if (pScore === dScore) {
-          balance += bjBet;
-          $('#bjMsg').innerHTML = 'Push';
-        } else {
-          $('#bjMsg').innerHTML = '<span class="red">Lose</span>';
-          loseEffect($('#view-blackjack'));
-        }
-        bjActive = false;
-        $('#bjHit').disabled = true;
-        $('#bjStand').disabled = true;
-        updateBalance();
-      });
-      $('#bjReset').addEventListener('click', () => { bjActive = false; $('#bjPlayer').innerText = '—'; $('#bjDealer').innerText = '—'; $('#bjMsg').innerText = ''; });
-
-      // CHICKEN (fixed)
-      let chickenActive = false, chickenStage = 0, chickenMult = 1, chickenBet = 10;
-      $('#chickenStart').addEventListener('click', () => {
-        chickenBet = parseFloat($('#chickenBet').value) || 10;
-        if (chickenBet > balance) return;
-        balance -= chickenBet;
-        chickenActive = true; chickenStage = 0; chickenMult = 1;
-        $('#chickenStageNum').innerText = chickenStage;
-        $('#chickenMult').innerText = 'x' + chickenMult.toFixed(2);
-        $('#chickenPot').innerText = money(chickenBet * chickenMult);
-        $('#chickenNext').disabled = false;
-        $('#chickenCashout').disabled = false;
-        $('#chickenText').innerText = 'Stage 0';
-      });
-      $('#chickenNext').addEventListener('click', () => {
-        if (!chickenActive) return;
-        const fail = Math.random() < 0.15 + chickenStage * 0.05;
-        if (fail) {
-          chickenActive = false;
-          $('#chickenText').innerHTML = '<span class="red">FRIED</span>';
-          loseEffect($('#view-chicken'));
-          $('#chickenNext').disabled = true;
-          $('#chickenCashout').disabled = true;
-          return;
-        }
-        chickenStage++;
-        chickenMult = 1 + chickenStage * 0.3;
-        $('#chickenStageNum').innerText = chickenStage;
-        $('#chickenMult').innerText = 'x' + chickenMult.toFixed(2);
-        $('#chickenPot').innerText = money(chickenBet * chickenMult);
-        $('#chickenText').innerText = 'Stage ' + chickenStage;
-      });
-      $('#chickenCashout').addEventListener('click', () => {
-        if (!chickenActive) return;
-        const payout = chickenBet * chickenMult;
-        window.balance += payout;
-        winEffect($('#view-chicken'));
-        chickenActive = false;
-        $('#chickenNext').disabled = true;
-        $('#chickenCashout').disabled = true;
-        updateBalance();
-      });
-
-      // PLINKO (with falling balls)
-      let plinkoRisk = 'medium';
-      let plinkoRows = 12;
-      
-      $$('.risk-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-          $$('.risk-btn').forEach(b => b.classList.remove('active'));
-          this.classList.add('active');
-          plinkoRisk = this.dataset.risk;
-        });
-      });
-
-      $$('.row-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-          $$('.row-btn').forEach(b => b.classList.remove('active'));
-          this.classList.add('active');
-          plinkoRows = parseInt(this.dataset.rows);
-          buildPlinkoBoard();
-        });
-      });
-
-      function buildPlinkoBoard() {
-        const board = $('#plinkoBoard');
-        board.innerHTML = '';
-        board.style.position = 'relative';
-        board.style.minHeight = (plinkoRows * 30) + 'px';
-        
-        for (let r = 0; r < plinkoRows; r++) {
-          const row = document.createElement('div');
-          row.className = 'plinko-row';
-          row.style.marginTop = r === 0 ? '0' : '-8px';
-          for (let i = 0; i <= r; i++) {
-            const peg = document.createElement('div');
-            peg.className = 'plinko-peg';
-            row.appendChild(peg);
-          }
-          board.appendChild(row);
-        }
-      }
-      buildPlinkoBoard();
-
-      $('#plinkoHalf').addEventListener('click', () => { let v = parseFloat($('#plinkoBet').value) || 10; $('#plinkoBet').value = (v/2).toFixed(2); });
-      $('#plinko2x').addEventListener('click', () => { let v = parseFloat($('#plinkoBet').value) || 10; $('#plinkoBet').value = (v*2).toFixed(2); });
-      $('#plinkoMax').addEventListener('click', () => { $('#plinkoBet').value = balance.toFixed(2); });
-
-      $('#plinkoDrop').addEventListener('click', () => {
-        let bet = parseFloat($('#plinkoBet').value) || 10;
-        if (bet > balance) return;
-        balance -= bet;
-        
-        // Create ball
-        const board = $('#plinkoBoard');
-        const ball = document.createElement('div');
-        ball.className = 'plinko-ball';
-        ball.style.left = '50%';
-        ball.style.top = '0px';
-        ball.style.transform = 'translateX(-50%)';
-        board.appendChild(ball);
-
-        // Animate ball
-        let row = 0;
-        let col = plinkoRows / 2;
-        const interval = setInterval(() => {
-          if (row >= plinkoRows - 1) {
-            clearInterval(interval);
-            ball.remove();
-            
-            // Calculate multiplier based on risk and final column
-            const riskMult = { low: [0.5, 1, 2, 3, 2, 1, 0.5], 
-                              medium: [0.3, 0.8, 1.5, 4, 1.5, 0.8, 0.3],
-                              high: [0.1, 0.5, 2, 10, 2, 0.5, 0.1] };
-            const mults = riskMult[plinkoRisk];
-            const finalCol = Math.floor(col);
-            const mult = mults[Math.min(finalCol, mults.length-1)] || 1;
-            
-            if (Math.random() < 0.45) {
-              balance += bet * mult;
-              $('#plinkoResult').innerHTML = `<span class="green">WIN x${mult.toFixed(2)}</span>`;
-              winEffect($('#view-plinko'));
-            } else {
-              $('#plinkoResult').innerHTML = '<span class="red">LOSE</span>';
-              loseEffect($('#view-plinko'));
-            }
-            updateBalance();
-            return;
-          }
-          
-          // Random left/right
-          col += Math.random() < 0.5 ? -0.3 : 0.3;
-          col = Math.max(0, Math.min(plinkoRows, col));
-          
-          ball.style.top = (row * 30 + 20) + 'px';
-          ball.style.left = (col * (100/plinkoRows)) + '%';
-          row++;
-        }, 100);
-      });
-
-      // CRASH
-      let crashActive = false, crashMult = 1, crashBet = 10, crashInterval;
-      const crashDisplay = $('#crashMultDisplay');
-      $('#crashStart').addEventListener('click', () => {
-        if (crashActive) return;
-        crashBet = parseFloat($('#crashBet').value) || 10;
-        if (crashBet > balance) return;
-        balance -= crashBet; updateBalance();
-        crashActive = true; crashMult = 1;
-        $('#crashCashout').disabled = false;
-        crashInterval = setInterval(() => {
-          crashMult += 0.01;
-          crashDisplay.innerText = crashMult.toFixed(2) + 'x';
-          if (Math.random() < 0.005 && crashMult > 1.5) {
-            clearInterval(crashInterval);
-            crashActive = false;
-            $('#crashCashout').disabled = true;
-            loseEffect($('#view-crash'));
-            crashDisplay.innerText = 'CRASHED';
-          }
-        }, 30);
-      });
-      $('#crashCashout').addEventListener('click', () => {
-        if (!crashActive) return;
-        clearInterval(crashInterval);
-        crashActive = false;
-        const payout = crashBet * crashMult;
-        window.balance += payout;
-        updateBalance();
-        winEffect($('#view-crash'));
-        $('#crashCashout').disabled = true;
-      });
-
-      // INIT
-      minesReset();
-      renderTables();
-      $('#btnRefreshBig')?.addEventListener('click', renderTables);
-      $('#btnRefreshRecent')?.addEventListener('click', renderTables);
-      updateDiceUI();
-      updateLimbo();
-    })();
-  </script>
-
-
-
-<div id="verifyModal" style="
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.65);
-display:none;
-align-items:center;
-justify-content:center;
-z-index:9999;
-backdrop-filter: blur(6px);
-">
-
-<div style="
-background:#0f1f2b;
-padding:40px;
-border-radius:16px;
-width:420px;
-max-width:95%;
-text-align:center;
-border:1px solid rgba(255,255,255,.08);
-box-shadow:0 30px 80px rgba(0,0,0,.6);
-">
-
-<h2>Minecraft Verify</h2>
-<p style="opacity:.7">Link your Minecraft account</p>
-
-<button id="genCodeBtn" style="
-background:#2f7dff;
-border:none;
-padding:14px 22px;
-border-radius:10px;
-font-weight:800;
-color:white;
-cursor:pointer;
-width:100%;
-margin-top:10px;
-">
-Generate Code
-</button>
-
-<div id="verifyStep" style="display:none;margin-top:25px;">
-<p>Send in Minecraft:</p>
-
-<div style="
-background:black;
-padding:15px;
-border-radius:10px;
-font-family:monospace;
-font-size:22px;
-letter-spacing:3px;
-">
-/msg Mangrover <span id="verifyCode">XXXX</span>
-</div>
-
-<p style="margin-top:15px;opacity:.7">
-Waiting for verification...
-</p>
-</div>
-
-<br>
-<button onclick="closeVerify()" style="
-margin-top:10px;
-background:none;
-border:none;
-color:#aaa;
-cursor:pointer">
-Cancel
-</button>
-
-</div>
-</div>
-
-<script>
-let verifyCode = null;
-let verifyInterval = null;
-
-const loginBtn = document.getElementById("btnLogin");
-const modal = document.getElementById("verifyModal");
-const genBtn = document.getElementById("genCodeBtn");
-
-loginBtn.onclick = () => {
-  modal.style.display = "flex";
-};
-
-function closeVerify(){
-  modal.style.display = "none";
-  clearInterval(verifyInterval);
-}
-
-genBtn.onclick = async () => {
-
-  genBtn.innerText = "Generating...";
-  genBtn.disabled = true;
-
-  const res = await fetch("/api/request-code",{method:"POST"});
-  const data = await res.json();
-
-  verifyCode = data.code;
-
-  document.getElementById("verifyCode").innerText = verifyCode;
-  document.getElementById("verifyStep").style.display="block";
-
-  startPolling();
-};
-
-
-function startPolling(){
-  verifyInterval = setInterval(async ()=>{
-
-    const res = await fetch("/api/verify-status/"+verifyCode);
-    const data = await res.json();
-
-    if(data.verified){
-      clearInterval(verifyInterval);
-
-      localStorage.setItem("player", data.player);
-      showWallet(data.player);
-
-      document.getElementById("verifyStep").innerHTML = `
-        <h3 style="color:#21e35a">Verified!</h3>
-        <p>Welcome ${data.player}</p>
-        <button onclick="location.reload()" style="
-        margin-top:10px;
-        padding:12px 20px;
-        border-radius:10px;
-        border:none;
-        background:#21e35a;
-        font-weight:800;">Enter</button>
-      `;
-    }
-
-  },1500);
-}
-
-function showWallet(player){
-
-  const btn = document.getElementById("btnLogin");
-
-  btn.outerHTML = `
-  <div style="position:relative">
-    <button id="walletBtn" class="login">💰 Wallet</button>
-
-    <div id="walletMenu" style="
-      display:none;
-      position:absolute;
-      right:0;
-      top:45px;
-      background:#0f1f2b;
-      border:1px solid rgba(255,255,255,.1);
-      border-radius:12px;
-      padding:10px;
-      width:170px;
-      z-index:999;
-    ">
-      <button onclick="openDeposit()" style="
-      width:100%;padding:10px;margin-bottom:6px;border-radius:8px;border:none;background:#2f7dff;color:white;font-weight:700">
-      Deposit</button>
-
-      <button onclick="openWithdraw()" style="
-      width:100%;padding:10px;margin-bottom:6px;border-radius:8px;border:none;background:#21e35a;font-weight:700">
-      Withdraw</button>
-
-      <button onclick="logout()" style="
-      width:100%;
-      padding:10px;
-      border-radius:8px;
-      border:none;
-      background:#ff4d4d;
-      color:white;
-      font-weight:700">
-      Logout</button>
+  <!-- VERIFY MODAL -->
+  <div id="verifyModal">
+    <div>
+      <h2>Minecraft Verify</h2>
+      <p style="opacity:.7">Link your Minecraft account</p>
+      <button id="genCodeBtn">Generate Code</button>
+      <div id="verifyStep" style="display:none;margin-top:25px;">
+        <p>Send in Minecraft:</p>
+        <div style="background:black; padding:15px; border-radius:10px; font-family:monospace; font-size:22px; letter-spacing:3px;">
+          /msg Mangrover <span id="verifyCode">XXXX</span>
+        </div>
+        <p style="margin-top:15px;opacity:.7">Waiting for verification...</p>
+      </div>
+      <br>
+      <button onclick="closeVerify()" style="margin-top:10px; background:none; border:none; color:#aaa; cursor:pointer">Cancel</button>
     </div>
   </div>
-  `;
 
-
-  setTimeout(()=>{
-    const wbtn = document.getElementById("walletBtn");
-    const menu = document.getElementById("walletMenu");
-
-    wbtn.onclick = ()=> {
-      menu.style.display = menu.style.display==="block" ? "none":"block";
-    };
-  },50);
-}
-
-window.onload = ()=>{
-  const player = localStorage.getItem("player");
-  if(player){
-    showWallet(player);
-  }
-};
-
-
-function openDeposit(){
-  document.getElementById("walletModal").style.display="flex";
-  document.getElementById("walletTitle").innerText="Deposit";
-
-  document.getElementById("walletContent").innerHTML = `
-  <div style="opacity:.7;margin-bottom:15px">
-  Send money in Minecraft to:
+  <!-- WALLET MODAL -->
+  <div id="walletModal">
+    <div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+        <h2 id="walletTitle">Wallet</h2>
+        <button onclick="closeWallet()" style="background:none; border:none; color:#aaa; font-size:20px; cursor:pointer">✕</button>
+      </div>
+      <div id="walletContent"></div>
+    </div>
   </div>
 
-  <div style="
-  background:black;
-  padding:16px;
-  border-radius:12px;
-  font-family:monospace;
-  font-size:20px;
-  letter-spacing:2px;
-  text-align:center;
-  ">
-  /pay Mangrover AMOUNT
-  </div>
+  <script>
+    // ===== GLOBALE VARIABLEN =====
+    let verifyCode = null;
+    let verifyInterval = null;
+    window.balance = 0;
 
-  <div style="margin-top:20px;opacity:.6;font-size:13px">
-  Your balance updates automatically.
-  </div>
-  `;
-}
+    // ===== HELPER FUNKTIONEN =====
+    const $ = (q) => document.querySelector(q);
+    const $$ = (q) => Array.from(document.querySelectorAll(q));
 
-function openWithdraw(){
-  const modal = document.getElementById("walletModal");
-  modal.style.display="flex";
-
-  document.getElementById("walletTitle").innerText="Withdraw";
-
-  document.getElementById("walletContent").innerHTML = `
-  <input id="withdrawAmount" placeholder="Amount" style="
-  width:100%;
-  padding:14px;
-  border-radius:10px;
-  border:1px solid rgba(255,255,255,.1);
-  background:#09141c;
-  color:white;
-  font-size:18px;
-  margin-bottom:15px;
-  ">
-
-  <button id="withdrawBtn" style="
-  width:100%;
-  padding:14px;
-  border-radius:10px;
-  border:none;
-  background:#21e35a;
-  font-weight:900;
-  font-size:16px;
-  cursor:pointer;
-  ">
-  Withdraw
-  </button>
-  `;
-
-  setTimeout(()=>{
-    document.getElementById("withdrawBtn").onclick = confirmWithdraw;
-  },50);
-}
-
-function closeWallet(){
- document.getElementById("walletModal").style.display="none";
-}
-
-async function confirmWithdraw(){
-
- const amount = document.getElementById("withdrawAmount").value;
- const player = localStorage.getItem("player");
-
- if(!player){
-   alert("Not logged in");
-   return;
- }
-
- if(!amount || Number(amount) <= 0){
-   alert("Invalid amount");
-   return;
- }
-
- console.log("Sending withdraw:", player, amount);
-
- const res = await fetch("/api/withdraw-to-mc",{
-   method:"POST",
-   headers:{'Content-Type':'application/json'},
-   body: JSON.stringify({
-     webUser: player,
-     targetPlayer: player,
-     amount: Number(amount)
-   })
- });
-
- const data = await res.json();
- console.log("withdraw response:", data);
-
- if(data.success){
-   document.getElementById("walletContent").innerHTML = `
-   <h3 style="color:#21e35a">Withdraw sent!</h3>
-   <p>Check Minecraft.</p>
-   `;
-   loadBalance();
- }else{
-   document.getElementById("walletContent").innerHTML = `
-   <h3 style="color:red">Error</h3>
-   <p>${data.error || "Server error"}</p>
-   `;
- }
-
-}
-
-</script>
-
-<div id="walletModal" style="
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.7);
-display:none;
-align-items:center;
-justify-content:center;
-z-index:999999;
-">
-
-<div style="
-background:#0f1f2b;
-padding:30px;
-border-radius:18px;
-width:420px;
-max-width:95%;
-border:1px solid rgba(255,255,255,.08);
-box-shadow:0 40px 120px rgba(0,0,0,.6);
-position:relative;
-z-index:1000000;
-">
-
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
-<h2 id="walletTitle">Wallet</h2>
-<button onclick="closeWallet()" style="background:none;border:none;color:#aaa;font-size:20px;cursor:pointer">✕</button>
-</div>
-
-<div id="walletContent"></div>
-
-</div>
-</div>
-
-<style>
-@keyframes pop{
-from{transform:scale(.9);opacity:0}
-to{transform:scale(1);opacity:1}
-}
-</style>
-
-<script>
-/* ===== SIMPLE ANTICHEAT (CLEAN VERSION) ===== */
-(function(){
-
-// Rechtsklick block
-document.addEventListener("contextmenu", e=>{
-  e.preventDefault();
-});
-
-// F12 + Devtools shortcuts block
-document.addEventListener("keydown", e=>{
-
-  // F12
-  if(e.key === "F12"){
-    e.preventDefault();
-    return false;
-  }
-
-  // CTRL + SHIFT + I
-  if(e.ctrlKey && e.shiftKey && e.key.toLowerCase()==="i"){
-    e.preventDefault();
-    return false;
-  }
-
-  // CTRL + SHIFT + J
-  if(e.ctrlKey && e.shiftKey && e.key.toLowerCase()==="j"){
-    e.preventDefault();
-    return false;
-  }
-
-  // CTRL + U (view source)
-  if(e.ctrlKey && e.key.toLowerCase()==="u"){
-    e.preventDefault();
-    return false;
-  }
-
-});
-
-})();
-
-        function logout(){
-  localStorage.removeItem("player"); // löscht login
-  location.reload(); // lädt Seite neu
-}
-    </script>
-
-<script>
-async function loadBalance(){
-  const player = localStorage.getItem("player");
-  if(!player) return;
-
-  try{
-    const res = await fetch("/api/status/"+player);
-    const data = await res.json();
-
-    if(data.balance != null){
-      window.balance = Number(data.balance);
-      window.updateBalance();
+    function money(n) {
+      const sign = n < 0 ? "-" : "";
+      n = Math.abs(n);
+      if (n >= 1e9) return sign + "$" + (n/1e9).toFixed(2) + "b";
+      if (n >= 1e6) return sign + "$" + (n/1e6).toFixed(2) + "m";
+      if (n >= 1e3) return sign + "$" + (n/1e3).toFixed(2) + "k";
+      return sign + "$" + n.toFixed(2);
     }
-  }catch(e){
-    console.log("balance load error");
-  }
-}
 
-setInterval(loadBalance, 2500);
-loadBalance();
-</script>
+    function updateBalance() {
+      $('#uiBalance').innerText = money(window.balance);
+    }
 
+    // ===== VERIFY SYSTEM =====
+    const loginBtn = document.getElementById("btnLogin");
+    const modal = document.getElementById("verifyModal");
+    const genBtn = document.getElementById("genCodeBtn");
 
+    loginBtn.onclick = () => {
+      modal.style.display = "flex";
+    };
+
+    window.closeVerify = () => {
+      modal.style.display = "none";
+      if (verifyInterval) clearInterval(verifyInterval);
+    };
+
+    genBtn.onclick = async () => {
+      genBtn.innerText = "Generating...";
+      genBtn.disabled = true;
+
+      try {
+        const res = await fetch("/api/request-code", {
+          method: "POST",
+          headers: { 'Content-Type': 'application/json' }
+        });
+        const data = await res.json();
+
+        verifyCode = data.code;
+        document.getElementById("verifyCode").innerText = verifyCode;
+        document.getElementById("verifyStep").style.display = "block";
+        startPolling();
+      } catch (error) {
+        console.error("Error generating code:", error);
+        alert("Failed to generate code. Please try again.");
+        genBtn.innerText = "Generate Code";
+        genBtn.disabled = false;
+      }
+    };
+
+    function startPolling() {
+      verifyInterval = setInterval(async () => {
+        try {
+          const res = await fetch("/api/verify-status/" + verifyCode);
+          const data = await res.json();
+
+          if (data.verified) {
+            clearInterval(verifyInterval);
+            localStorage.setItem("player", data.player);
+            localStorage.setItem("verified", "true");
+            showWallet(data.player);
+            loadBalance(); // Balance sofort laden
+
+            document.getElementById("verifyStep").innerHTML = `
+              <h3 style="color:#21e35a">✓ Verified!</h3>
+              <p>Welcome ${data.player}</p>
+              <button onclick="location.reload()" style="
+                margin-top:10px;
+                padding:12px 20px;
+                border-radius:10px;
+                border:none;
+                background:#21e35a;
+                font-weight:800;
+                cursor:pointer;
+              ">Enter Casino</button>
+            `;
+          }
+        } catch (error) {
+          console.error("Polling error:", error);
+        }
+      }, 1500);
+    }
+
+    // ===== WALLET SYSTEM =====
+    function showWallet(player) {
+      const btn = document.getElementById("btnLogin");
+      btn.outerHTML = `
+        <div style="position:relative">
+          <button id="walletBtn" class="login">💰 ${player}</button>
+          <div id="walletMenu" style="display:none;">
+            <button onclick="openDeposit()">Deposit</button>
+            <button onclick="openWithdraw()">Withdraw</button>
+            <button onclick="logout()">Logout</button>
+          </div>
+        </div>
+      `;
+
+      setTimeout(() => {
+        const wbtn = document.getElementById("walletBtn");
+        const menu = document.getElementById("walletMenu");
+
+        wbtn.onclick = (e) => {
+          e.stopPropagation();
+          menu.style.display = menu.style.display === "block" ? "none" : "block";
+        };
+
+        document.addEventListener('click', (e) => {
+          if (!wbtn.contains(e.target) && !menu.contains(e.target)) {
+            menu.style.display = 'none';
+          }
+        });
+      }, 50);
+    }
+
+    window.openDeposit = () => {
+      document.getElementById("walletModal").style.display = "flex";
+      document.getElementById("walletTitle").innerText = "Deposit";
+
+      document.getElementById("walletContent").innerHTML = `
+        <div style="opacity:.7;margin-bottom:15px">
+          Send money in Minecraft to:
+        </div>
+        <div style="
+          background:black;
+          padding:16px;
+          border-radius:12px;
+          font-family:monospace;
+          font-size:20px;
+          letter-spacing:2px;
+          text-align:center;
+        ">
+          /pay Mangrover AMOUNT
+        </div>
+        <div style="margin-top:20px;opacity:.6;font-size:13px">
+          Your balance updates automatically.
+        </div>
+      `;
+    };
+
+    window.openWithdraw = () => {
+      const modal = document.getElementById("walletModal");
+      modal.style.display = "flex";
+
+      document.getElementById("walletTitle").innerText = "Withdraw";
+
+      document.getElementById("walletContent").innerHTML = `
+        <input id="withdrawAmount" class="input" placeholder="Amount" type="number" min="1" step="0.01" style="margin-bottom:15px;">
+        <button id="withdrawBtn" class="betbtn primary" style="margin:0;">Withdraw</button>
+      `;
+
+      setTimeout(() => {
+        document.getElementById("withdrawBtn").onclick = confirmWithdraw;
+      }, 50);
+    };
+
+    window.closeWallet = () => {
+      document.getElementById("walletModal").style.display = "none";
+    };
+
+    window.confirmWithdraw = async () => {
+      const amount = document.getElementById("withdrawAmount").value;
+      const player = localStorage.getItem("player");
+
+      if (!player) {
+        alert("Not logged in");
+        return;
+      }
+
+      if (!amount || Number(amount) <= 0) {
+        alert("Invalid amount");
+        return;
+      }
+
+      if (Number(amount) > window.balance) {
+        alert("Insufficient balance");
+        return;
+      }
+
+      try {
+        const res = await fetch("/api/withdraw-to-mc", {
+          method: "POST",
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            webUser: player,
+            targetPlayer: player,
+            amount: Number(amount)
+          })
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+          document.getElementById("walletContent").innerHTML = `
+            <h3 style="color:#21e35a">✓ Withdrawal Sent!</h3>
+            <p style="margin:15px 0;">Check Minecraft for ${money(Number(amount))}</p>
+            <button onclick="closeWallet()" class="betbtn" style="margin:0;">Close</button>
+          `;
+          loadBalance(); // Balance sofort aktualisieren
+        } else {
+          document.getElementById("walletContent").innerHTML = `
+            <h3 style="color:red">Error</h3>
+            <p style="margin:15px 0;">${data.error || "Server error"}</p>
+            <button onclick="closeWallet()" class="betbtn" style="margin:0;">Close</button>
+          `;
+        }
+      } catch (error) {
+        console.error("Withdraw error:", error);
+        alert("Failed to process withdrawal");
+      }
+    };
+
+    window.logout = () => {
+      localStorage.removeItem("player");
+      localStorage.removeItem("verified");
+      location.reload();
+    };
+
+    // ===== BALANCE LOADING =====
+    async function loadBalance() {
+      const player = localStorage.getItem("player");
+      if (!player) return;
+
+      try {
+        const res = await fetch("/api/status/" + player);
+        const data = await res.json();
+
+        if (data.balance != null) {
+          window.balance = Number(data.balance);
+          window.updateBalance();
+        }
+      } catch (e) {
+        console.log("Balance load error:", e);
+      }
+    }
+
+    // ===== GAME FUNCTIONS =====
+    function winEffect(el) { 
+      if (!el) return; 
+      el.classList.add('win-glow'); 
+      setTimeout(() => el.classList.remove('win-glow'), 600); 
+    }
+
+    function loseEffect(el) { 
+      if (!el) return; 
+      el.classList.add('shake'); 
+      setTimeout(() => el.classList.remove('shake'), 300); 
+    }
+
+    // Tables
+    let recentWagers = [];
+    let bigWins = [];
+
+    function pushRecent(row) { 
+      recentWagers.unshift(row); 
+      recentWagers = recentWagers.slice(0, 10); 
+      renderTables(); 
+    }
+
+    function pushBigWin(row) { 
+      bigWins.unshift(row); 
+      bigWins = bigWins.slice(0, 10); 
+      renderTables(); 
+    }
+
+    function renderTables() {
+      const big = $('#tblBigWins');
+      const rec = $('#tblRecent');
+      if (!big || !rec) return;
+
+      if (bigWins.length === 0) {
+        big.innerHTML = `<tr><td style="color:rgba(200,230,255,.45)" colspan="5">No big wins yet.</td></tr>`;
+      } else {
+        big.innerHTML = bigWins.map(r => `<tr><td style="width:30%"><b>${r.player}</b></td><td style="width:18%;">${money(r.bet)}</td><td style="width:18%;" class="green">+${money(r.profit)}</td><td style="width:22%;">${r.time}</td></tr>`).join('');
+      }
+
+      if (recentWagers.length === 0) {
+        rec.innerHTML = `<tr><td style="color:rgba(200,230,255,.45)" colspan="5">No wagers yet.</td></tr>`;
+      } else {
+        rec.innerHTML = recentWagers.map(r => `<tr><td style="width:30%"><b>${r.game}</b></td><td style="width:18%;">${money(r.bet)}</td><td style="width:18%;" class="${r.profit>=0?'green':'red'}">${r.profit>=0?'+':'-'}${money(Math.abs(r.profit))}</td><td style="width:22%;">${r.time}</td></tr>`).join('');
+      }
+    }
+
+    // ===== VIEW TOGGLING =====
+    const links = $$('.nav a[data-view]');
+    const views = $$('.view');
+
+    function show(viewName) {
+      views.forEach(v => v.classList.remove('active'));
+      const el = document.getElementById('view-' + viewName);
+      if (el) el.classList.add('active');
+      
+      links.forEach(l => l.classList.remove('active'));
+      const active = links.find(l => l.dataset.view === viewName);
+      if (active) active.classList.add('active');
+    }
+
+    links.forEach(l => l.addEventListener('click', (e) => { 
+      e.preventDefault(); 
+      show(l.dataset.view); 
+    }));
+
+    $$('[data-jump]').forEach(el => el.addEventListener('click', () => show(el.dataset.jump)));
+
+    // ===== MINES =====
+    let minesActive = false, minesBoard = [], minesMines = 3, minesBet = 10, minesRevealed = 0, minesMult = 1, minesMineSet = new Set(), minesRevealedSet = new Set();
+    const minesTiles = $('#minesTiles');
+
+    function minesReset() {
+      minesActive = false; minesRevealed = 0; minesMineSet.clear(); minesRevealedSet.clear(); minesMult = 1;
+      $('#minesMult').innerText = 'x1.00'; $('#minesPotential').innerText = money(0);
+      $('#minesStart').disabled = false; $('#minesCashout').disabled = true;
+      minesTiles.innerHTML = '';
+      for (let i = 0; i < 25; i++) {
+        const t = document.createElement('div');
+        t.className = 'tile'; t.dataset.idx = i;
+        t.onclick = () => minesClick(i, t);
+        minesTiles.appendChild(t);
+        minesBoard[i] = { mine: false };
+      }
+    }
+
+    function minesMultiplier(safe, total) { 
+      return +(1 + safe * (0.2 + total * 0.03)).toFixed(2); 
+    }
+
+    function minesUpdateUI() {
+      $('#minesMult').innerText = 'x' + minesMult.toFixed(2);
+      $('#minesPotential').innerText = money(minesBet * minesMult);
+    }
+
+    function minesStart() {
+      if (minesActive) return;
+
+      minesBet = parseFloat($('#minesBet').value) || 10;
+      minesMines = parseInt($('#minesCount').value) || 3;
+
+      if (minesBet > window.balance) {
+        alert("Not enough balance");
+        return;
+      }
+
+      window.balance -= minesBet;
+      window.updateBalance();
+
+      minesMineSet.clear();
+      while (minesMineSet.size < minesMines)
+        minesMineSet.add(Math.floor(Math.random()*25));
+
+      minesActive = true;
+      minesRevealed = 0;
+      minesRevealedSet.clear();
+      minesMult = 1;
+
+      $('#minesStart').disabled = true;
+      $('#minesCashout').disabled = false;
+      minesUpdateUI();
+    }
+
+    function minesEnd(loss) {
+      minesActive = false;
+
+      $('#minesStart').disabled = false;
+      $('#minesCashout').disabled = true;
+
+      $$('#minesTiles .tile').forEach((t, i) => {
+        t.classList.add('revealed');
+        if (minesMineSet.has(i)) t.classList.add('mine');
+        else if (minesRevealedSet.has(i)) t.classList.add('gem');
+      });
+
+      if (loss) pushRecent({ game: 'Mines', bet: minesBet, profit: -minesBet, winrate: 0, time: new Date().toLocaleTimeString() });
+
+      if(loss){
+        setTimeout(minesReset, 1200);
+      }
+    }
+
+    function minesCashout() {
+      if(!minesActive) return;
+
+      const payout = minesBet * minesMult;
+      const profit = payout - minesBet;
+
+      window.balance += payout;
+      window.updateBalance();
+
+      winEffect($('#view-mines'));
+
+      if(profit > 50){
+        pushBigWin({player:"You", bet:minesBet, profit:profit, time:new Date().toLocaleTimeString()});
+      }
+
+      pushRecent({game:"Mines", bet:minesBet, profit:profit, winrate:100, time:new Date().toLocaleTimeString()});
+
+      minesEnd(false);
+      setTimeout(minesReset, 800);
+    }
+
+    function minesClick(idx, tile) {
+      if (!minesActive || minesRevealedSet.has(idx)) return;
+      tile.classList.add('revealed');
+      if (minesMineSet.has(idx)) {
+        tile.classList.add('mine');
+        loseEffect($('#view-mines'));
+        minesEnd(true);
+        return;
+      }
+      minesRevealedSet.add(idx);
+      tile.classList.add('gem');
+      minesRevealed++;
+      minesMult = minesMultiplier(minesRevealed, minesMines);
+      minesUpdateUI();
+      if (minesRevealed === 25 - minesMines) minesCashout();
+    }
+
+    $('#minesStart').addEventListener('click', minesStart);
+    $('#minesCashout').addEventListener('click', minesCashout);
+    $('#minesHalf').addEventListener('click', () => { let v = parseFloat($('#minesBet').value) || 10; $('#minesBet').value = (v/2).toFixed(2); });
+    $('#mines2x').addEventListener('click', () => { let v = parseFloat($('#minesBet').value) || 10; $('#minesBet').value = (v*2).toFixed(2); });
+    $('#minesMax').addEventListener('click', () => { $('#minesBet').value = window.balance.toFixed(2); });
+
+    // ===== DICE =====
+    let diceUnder = true;
+    const diceTarget = $('#diceTarget');
+    const diceTargetValue = $('#diceTargetValue');
+    const diceNumber = $('#diceNumber');
+    const diceSliderFill = $('#diceSliderFill');
+    const diceMarker = $('#diceMarker');
+    const diceWinChance = $('#diceWinChance');
+    const diceMultiplier = $('#diceMultiplier');
+    const diceProfit = $('#diceProfit');
+    const diceBet = $('#diceBet');
+
+    function updateDiceUI() {
+      const target = parseFloat(diceTarget.value);
+      diceTargetValue.innerText = target.toFixed(2);
+      diceNumber.innerText = target.toFixed(2);
+      const chance = diceUnder ? target : 100 - target;
+      const mult = (99 / chance).toFixed(4);
+      diceWinChance.innerText = chance.toFixed(1) + '%';
+      diceMultiplier.innerText = mult + 'x';
+      const bet = parseFloat(diceBet.value) || 10;
+      const profit = (bet * mult - bet).toFixed(2);
+      diceProfit.innerText = '$' + profit;
+      diceSliderFill.style.width = target + '%';
+      diceMarker.style.left = target + '%';
+    }
+
+    $('#diceUnderBtn').addEventListener('click', () => { 
+      diceUnder = true; 
+      $('#diceUnderBtn').classList.add('active'); 
+      $('#diceOverBtn').classList.remove('active'); 
+      updateDiceUI(); 
+    });
+
+    $('#diceOverBtn').addEventListener('click', () => { 
+      diceUnder = false; 
+      $('#diceOverBtn').classList.add('active'); 
+      $('#diceUnderBtn').classList.remove('active'); 
+      updateDiceUI(); 
+    });
+
+    diceTarget.addEventListener('input', updateDiceUI);
+    diceBet.addEventListener('input', updateDiceUI);
+
+    $$('[data-dicebet]').forEach(b => {
+      b.addEventListener('click', () => {
+        const v = parseFloat(diceBet.value) || 10;
+        if (b.dataset.dicebet === 'half') diceBet.value = (v/2).toFixed(2);
+        if (b.dataset.dicebet === '2x') diceBet.value = (v*2).toFixed(2);
+        if (b.dataset.dicebet === 'max') diceBet.value = window.balance.toFixed(2);
+        updateDiceUI();
+      });
+    });
+
+    $('#diceBetBtn').addEventListener('click', () => {
+      let bet = parseFloat(diceBet.value) || 10;
+      if (bet > window.balance) {
+        alert("Not enough balance");
+        return;
+      }
+
+      window.balance -= bet;
+
+      const target = parseFloat(diceTarget.value);
+      const roll = Math.random() * 100;
+      const win = diceUnder ? roll < target : roll > target;
+      const mult = parseFloat(diceMultiplier.innerText);
+
+      if (win) {
+        const payout = bet * mult;
+        window.balance += payout;
+        winEffect($('#view-dice'));
+        pushRecent({ game: 'Dice', bet: bet, profit: payout - bet, winrate: 100, time: new Date().toLocaleTimeString() });
+      } else {
+        loseEffect($('#view-dice'));
+        pushRecent({ game: 'Dice', bet: bet, profit: -bet, winrate: 0, time: new Date().toLocaleTimeString() });
+      }
+
+      diceNumber.innerText = roll.toFixed(2);
+      window.updateBalance();
+    });
+
+    // ===== COINFLIP =====
+    let coinPick = 'heads';
+
+    $('#pickHeads').addEventListener('click', function() { 
+      coinPick = 'heads'; 
+      $('#pickHeads').classList.add('active'); 
+      $('#pickTails').classList.remove('active'); 
+    });
+
+    $('#pickTails').addEventListener('click', function() { 
+      coinPick = 'tails'; 
+      $('#pickTails').classList.add('active'); 
+      $('#pickHeads').classList.remove('active'); 
+    });
+
+    $$('[data-coinbet]').forEach(b => {
+      b.addEventListener('click', () => {
+        const v = parseFloat($('#coinBet').value) || 10;
+        if (b.dataset.coinbet === 'half') $('#coinBet').value = (v/2).toFixed(2);
+        if (b.dataset.coinbet === '2x') $('#coinBet').value = (v*2).toFixed(2);
+        if (b.dataset.coinbet === 'max') $('#coinBet').value = window.balance.toFixed(2);
+      });
+    });
+
+    $('#coinBetBtn').addEventListener('click', () => {
+      let bet = parseFloat($('#coinBet').value) || 10;
+      if (bet > window.balance) {
+        alert("Not enough balance");
+        return;
+      }
+
+      window.balance -= bet;
+
+      const spin = Math.random() < 0.5 ? 'heads' : 'tails';
+      $('#coinFace').innerText = spin === 'heads' ? '🙂' : '🦅';
+
+      if (spin === coinPick) {
+        const payout = bet * 1.98;
+        window.balance += payout;
+        $('#coinResult').innerHTML = '<span class="green">WIN +' + money(payout - bet) + '</span>';
+        winEffect($('#view-coinflip'));
+        pushRecent({ game: 'Coinflip', bet: bet, profit: payout - bet, winrate: 100, time: new Date().toLocaleTimeString() });
+      } else {
+        $('#coinResult').innerHTML = '<span class="red">LOSE -' + money(bet) + '</span>';
+        loseEffect($('#view-coinflip'));
+        pushRecent({ game: 'Coinflip', bet: bet, profit: -bet, winrate: 0, time: new Date().toLocaleTimeString() });
+      }
+
+      window.updateBalance();
+    });
+
+    // ===== LIMBO =====
+    const limboTarget = $('#limboTarget');
+    const limboChance = $('#limboChance');
+    const limboDisplay = $('#limboDisplay');
+    const limboTargetDisplay = $('#limboTargetDisplay');
+    const limboChanceDisplay = $('#limboChanceDisplay');
+
+    function updateLimbo() {
+      let t = parseFloat(limboTarget.value) || 2;
+      t = Math.max(1.1, Math.min(100, t));
+      const chance = (99 / t).toFixed(2);
+      limboChance.innerText = chance + '%';
+      limboTargetDisplay.innerText = t.toFixed(2) + 'x';
+      limboChanceDisplay.innerText = chance + '%';
+    }
+
+    limboTarget.addEventListener('input', updateLimbo);
+
+    $$('[data-limbobet]').forEach(b => {
+      b.addEventListener('click', () => {
+        const v = parseFloat($('#limboBet').value) || 10;
+        if (b.dataset.limbobet === 'half') $('#limboBet').value = (v/2).toFixed(2);
+        if (b.dataset.limbobet === '2x') $('#limboBet').value = (v*2).toFixed(2);
+        if (b.dataset.limbobet === 'max') $('#limboBet').value = window.balance.toFixed(2);
+      });
+    });
+
+    $('#limboBetBtn').addEventListener('click', () => {
+      let bet = parseFloat($('#limboBet').value) || 10;
+      let target = parseFloat(limboTarget.value) || 2;
+
+      if (bet > window.balance) {
+        alert("Not enough balance");
+        return;
+      }
+
+      window.balance -= bet;
+
+      const roll = 1 + Math.random() * 10;
+      limboDisplay.innerText = roll.toFixed(2) + 'x';
+
+      if (roll >= target) {
+        const payout = bet * target;
+        window.balance += payout;
+        winEffect($('#view-limbo'));
+        pushRecent({ game: 'Limbo', bet: bet, profit: payout - bet, winrate: 100, time: new Date().toLocaleTimeString() });
+      } else {
+        loseEffect($('#view-limbo'));
+        pushRecent({ game: 'Limbo', bet: bet, profit: -bet, winrate: 0, time: new Date().toLocaleTimeString() });
+      }
+
+      updateBalance();
+    });
+
+    // ===== BLACKJACK =====
+    let bjActive = false, bjBet = 10, bjPlayer = [], bjDealer = [];
+
+    $('#bjDeal').addEventListener('click', () => {
+      bjBet = parseFloat($('#bjBet').value) || 10;
+      if (bjBet > window.balance) {
+        alert("Not enough balance");
+        return;
+      }
+
+      window.balance -= bjBet;
+      bjActive = true;
+      bjPlayer = [Math.floor(Math.random()*10)+2, Math.floor(Math.random()*10)+2];
+      bjDealer = [Math.floor(Math.random()*10)+2, Math.floor(Math.random()*10)+2];
+
+      $('#bjPlayer').innerText = bjPlayer.join(' ');
+      $('#bjDealer').innerText = bjDealer[0] + ' ?';
+      $('#bjPlayerScore').innerText = 'Score: ' + bjPlayer.reduce((a,b)=>a+b,0);
+      $('#bjDealerScore').innerText = 'Score: ?';
+      $('#bjHit').disabled = false;
+      $('#bjStand').disabled = false;
+      $('#bjMsg').innerText = '';
+
+      updateBalance();
+    });
+
+    $('#bjHit').addEventListener('click', () => {
+      if (!bjActive) return;
+
+      bjPlayer.push(Math.floor(Math.random()*10)+2);
+      $('#bjPlayer').innerText = bjPlayer.join(' ');
+
+      const score = bjPlayer.reduce((a,b)=>a+b,0);
+      $('#bjPlayerScore').innerText = 'Score: ' + score;
+
+      if (score > 21) {
+        bjActive = false;
+        $('#bjMsg').innerHTML = '<span class="red">Bust</span>';
+        loseEffect($('#view-blackjack'));
+        $('#bjHit').disabled = true;
+        $('#bjStand').disabled = true;
+        pushRecent({ game: 'Blackjack', bet: bjBet, profit: -bjBet, winrate: 0, time: new Date().toLocaleTimeString() });
+      }
+    });
+
+    $('#bjStand').addEventListener('click', () => {
+      if (!bjActive) return;
+
+      const pScore = bjPlayer.reduce((a,b)=>a+b,0);
+      const dScore = bjDealer.reduce((a,b)=>a+b,0);
+
+      $('#bjDealer').innerText = bjDealer.join(' ');
+      $('#bjDealerScore').innerText = 'Score: ' + dScore;
+
+      if (pScore > dScore && pScore <= 21) {
+        window.balance += bjBet * 2;
+        $('#bjMsg').innerHTML = '<span class="green">Win</span>';
+        winEffect($('#view-blackjack'));
+        pushRecent({ game: 'Blackjack', bet: bjBet, profit: bjBet, winrate: 100, time: new Date().toLocaleTimeString() });
+      } else if (pScore === dScore) {
+        window.balance += bjBet;
+        $('#bjMsg').innerHTML = 'Push';
+        pushRecent({ game: 'Blackjack', bet: bjBet, profit: 0, winrate: 0, time: new Date().toLocaleTimeString() });
+      } else {
+        $('#bjMsg').innerHTML = '<span class="red">Lose</span>';
+        loseEffect($('#view-blackjack'));
+        pushRecent({ game: 'Blackjack', bet: bjBet, profit: -bjBet, winrate: 0, time: new Date().toLocaleTimeString() });
+      }
+
+      bjActive = false;
+      $('#bjHit').disabled = true;
+      $('#bjStand').disabled = true;
+      updateBalance();
+    });
+
+    $('#bjReset').addEventListener('click', () => { 
+      bjActive = false; 
+      $('#bjPlayer').innerText = '—'; 
+      $('#bjDealer').innerText = '—'; 
+      $('#bjMsg').innerText = ''; 
+    });
+
+    // ===== CHICKEN =====
+    let chickenActive = false, chickenStage = 0, chickenMult = 1, chickenBet = 10;
+
+    $('#chickenStart').addEventListener('click', () => {
+      chickenBet = parseFloat($('#chickenBet').value) || 10;
+      if (chickenBet > window.balance) {
+        alert("Not enough balance");
+        return;
+      }
+
+      window.balance -= chickenBet;
+      chickenActive = true; 
+      chickenStage = 0; 
+      chickenMult = 1;
+
+      $('#chickenStageNum').innerText = chickenStage;
+      $('#chickenMult').innerText = 'x' + chickenMult.toFixed(2);
+      $('#chickenPot').innerText = money(chickenBet * chickenMult);
+      $('#chickenNext').disabled = false;
+      $('#chickenCashout').disabled = false;
+      $('#chickenText').innerText = 'Stage 0';
+
+      updateBalance();
+    });
+
+    $('#chickenNext').addEventListener('click', () => {
+      if (!chickenActive) return;
+
+      const fail = Math.random() < 0.15 + chickenStage * 0.05;
+
+      if (fail) {
+        chickenActive = false;
+        $('#chickenText').innerHTML = '<span class="red">FRIED</span>';
+        loseEffect($('#view-chicken'));
+        $('#chickenNext').disabled = true;
+        $('#chickenCashout').disabled = true;
+        pushRecent({ game: 'Chicken', bet: chickenBet, profit: -chickenBet, winrate: 0, time: new Date().toLocaleTimeString() });
+        return;
+      }
+
+      chickenStage++;
+      chickenMult = 1 + chickenStage * 0.3;
+
+      $('#chickenStageNum').innerText = chickenStage;
+      $('#chickenMult').innerText = 'x' + chickenMult.toFixed(2);
+      $('#chickenPot').innerText = money(chickenBet * chickenMult);
+      $('#chickenText').innerText = 'Stage ' + chickenStage;
+    });
+
+    $('#chickenCashout').addEventListener('click', () => {
+      if (!chickenActive) return;
+
+      const payout = chickenBet * chickenMult;
+      const profit = payout - chickenBet;
+
+      window.balance += payout;
+      winEffect($('#view-chicken'));
+
+      chickenActive = false;
+      $('#chickenNext').disabled = true;
+      $('#chickenCashout').disabled = true;
+
+      updateBalance();
+      pushRecent({ game: 'Chicken', bet: chickenBet, profit: profit, winrate: 100, time: new Date().toLocaleTimeString() });
+    });
+
+    $$('[data-chickbet]').forEach(b => {
+      b.addEventListener('click', () => {
+        const v = parseFloat($('#chickenBet').value) || 10;
+        if (b.dataset.chickbet === 'half') $('#chickenBet').value = (v/2).toFixed(2);
+        if (b.dataset.chickbet === '2x') $('#chickenBet').value = (v*2).toFixed(2);
+        if (b.dataset.chickbet === 'max') $('#chickenBet').value = window.balance.toFixed(2);
+      });
+    });
+
+    // ===== PLINKO =====
+    let plinkoRisk = 'medium';
+    let plinkoRows = 12;
+
+    $$('.risk-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        $$('.risk-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        plinkoRisk = this.dataset.risk;
+      });
+    });
+
+    $$('.row-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        $$('.row-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        plinkoRows = parseInt(this.dataset.rows);
+        buildPlinkoBoard();
+      });
+    });
+
+    function buildPlinkoBoard() {
+      const board = $('#plinkoBoard');
+      board.innerHTML = '';
+      board.style.position = 'relative';
+      board.style.minHeight = (plinkoRows * 30) + 'px';
+
+      for (let r = 0; r < plinkoRows; r++) {
+        const row = document.createElement('div');
+        row.className = 'plinko-row';
+        row.style.marginTop = r === 0 ? '0' : '-8px';
+        for (let i = 0; i <= r; i++) {
+          const peg = document.createElement('div');
+          peg.className = 'plinko-peg';
+          row.appendChild(peg);
+        }
+        board.appendChild(row);
+      }
+    }
+
+    buildPlinkoBoard();
+
+    $('#plinkoHalf').addEventListener('click', () => { 
+      let v = parseFloat($('#plinkoBet').value) || 10; 
+      $('#plinkoBet').value = (v/2).toFixed(2); 
+    });
+
+    $('#plinko2x').addEventListener('click', () => { 
+      let v = parseFloat($('#plinkoBet').value) || 10; 
+      $('#plinkoBet').value = (v*2).toFixed(2); 
+    });
+
+    $('#plinkoMax').addEventListener('click', () => { 
+      $('#plinkoBet').value = window.balance.toFixed(2); 
+    });
+
+    $('#plinkoDrop').addEventListener('click', () => {
+      let bet = parseFloat($('#plinkoBet').value) || 10;
+      if (bet > window.balance) {
+        alert("Not enough balance");
+        return;
+      }
+
+      window.balance -= bet;
+
+      const board = $('#plinkoBoard');
+      const ball = document.createElement('div');
+      ball.className = 'plinko-ball';
+      ball.style.left = '50%';
+      ball.style.top = '0px';
+      ball.style.transform = 'translateX(-50%)';
+      board.appendChild(ball);
+
+      let row = 0;
+      let col = plinkoRows / 2;
+
+      const interval = setInterval(() => {
+        if (row >= plinkoRows - 1) {
+          clearInterval(interval);
+          ball.remove();
+
+          const riskMult = { 
+            low: [0.5, 1, 2, 3, 2, 1, 0.5], 
+            medium: [0.3, 0.8, 1.5, 4, 1.5, 0.8, 0.3],
+            high: [0.1, 0.5, 2, 10, 2, 0.5, 0.1] 
+          };
+
+          const mults = riskMult[plinkoRisk];
+          const finalCol = Math.floor(col);
+          const mult = mults[Math.min(finalCol, mults.length-1)] || 1;
+          const payout = bet * mult;
+          const profit = payout - bet;
+
+          window.balance += payout;
+          $('#plinkoResult').innerHTML = `<span class="green">WIN x${mult.toFixed(2)} +${money(profit)}</span>`;
+          winEffect($('#view-plinko'));
+          pushRecent({ game: 'Plinko', bet: bet, profit: profit, winrate: 100, time: new Date().toLocaleTimeString() });
+          updateBalance();
+          return;
+        }
+
+        col += Math.random() < 0.5 ? -0.3 : 0.3;
+        col = Math.max(0, Math.min(plinkoRows, col));
+
+        ball.style.top = (row * 30 + 20) + 'px';
+        ball.style.left = (col * (100/plinkoRows)) + '%';
+        row++;
+      }, 100);
+    });
+
+    // ===== CRASH =====
+    let crashActive = false, crashMult = 1, crashBet = 10, crashInterval;
+    const crashDisplay = $('#crashMultDisplay');
+
+    $('#crashStart').addEventListener('click', () => {
+      if (crashActive) return;
+
+      crashBet = parseFloat($('#crashBet').value) || 10;
+      if (crashBet > window.balance) {
+        alert("Not enough balance");
+        return;
+      }
+
+      window.balance -= crashBet;
+      updateBalance();
+
+      crashActive = true;
+      crashMult = 1;
+      $('#crashCashout').disabled = false;
+
+      crashInterval = setInterval(() => {
+        crashMult += 0.01;
+        crashDisplay.innerText = crashMult.toFixed(2) + 'x';
+
+        if (Math.random() < 0.005 && crashMult > 1.5) {
+          clearInterval(crashInterval);
+          crashActive = false;
+          $('#crashCashout').disabled = true;
+          loseEffect($('#view-crash'));
+          crashDisplay.innerText = 'CRASHED';
+          pushRecent({ game: 'Crash', bet: crashBet, profit: -crashBet, winrate: 0, time: new Date().toLocaleTimeString() });
+        }
+      }, 30);
+    });
+
+    $('#crashCashout').addEventListener('click', () => {
+      if (!crashActive) return;
+
+      clearInterval(crashInterval);
+      crashActive = false;
+
+      const payout = crashBet * crashMult;
+      const profit = payout - crashBet;
+
+      window.balance += payout;
+      updateBalance();
+
+      winEffect($('#view-crash'));
+      $('#crashCashout').disabled = true;
+      pushRecent({ game: 'Crash', bet: crashBet, profit: profit, winrate: 100, time: new Date().toLocaleTimeString() });
+    });
+
+    // ===== INITIALISIERUNG =====
+    window.updateBalance = updateBalance;
+    window.balance = 0;
+
+    // Auto-login wenn bereits verifiziert
+    window.onload = () => {
+      const player = localStorage.getItem("player");
+      if (player) {
+        showWallet(player);
+        loadBalance();
+      }
+      minesReset();
+      renderTables();
+      updateDiceUI();
+      updateLimbo();
+    };
+
+    // Balance automatisch alle 2.5 Sekunden aktualisieren
+    setInterval(loadBalance, 2500);
+
+    // ===== ANTICHEAT =====
+    document.addEventListener("contextmenu", e => e.preventDefault());
+
+    document.addEventListener("keydown", e => {
+      if (e.key === "F12" || 
+          (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") ||
+          (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "j") ||
+          (e.ctrlKey && e.key.toLowerCase() === "u")) {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    // Event Listener für Refresh-Buttons
+    $('#btnRefreshBig')?.addEventListener('click', renderTables);
+    $('#btnRefreshRecent')?.addEventListener('click', renderTables);
+  </script>
 </body>
 </html>
