@@ -1237,8 +1237,9 @@
     (function() {
       const $ = (q) => document.querySelector(q);
       const $$ = (q) => Array.from(document.querySelectorAll(q));
+      const balanceEl = document.getElementById("uiBalance");
 
-      let balance = 0;
+      window.balance = 0;
       
       function money(n) {
         const sign = n < 0 ? "-" : "";
@@ -1257,8 +1258,10 @@
       function winEffect(el) { if (!el) return; el.classList.add('win-glow'); setTimeout(() => el.classList.remove('win-glow'), 400); }
       function loseEffect(el) { if (!el) return; el.classList.add('shake'); setTimeout(() => el.classList.remove('shake'), 300); }
 
-      const balanceEl = $('#uiBalance');
-      function updateBalance() { balanceEl.innerText = money(balance); }
+      window.updateBalance = function(){
+         balanceEl.innerText = money(window.balance);
+       }
+
       updateBalance();
 
       let recentWagers = [];
@@ -1615,7 +1618,7 @@ function minesEnd(loss) {
       $('#chickenCashout').addEventListener('click', () => {
         if (!chickenActive) return;
         const payout = chickenBet * chickenMult;
-        balance += payout;
+        window.balance += payout;
         winEffect($('#view-chicken'));
         chickenActive = false;
         $('#chickenNext').disabled = true;
@@ -1747,7 +1750,7 @@ function minesEnd(loss) {
         clearInterval(crashInterval);
         crashActive = false;
         const payout = crashBet * crashMult;
-        balance += payout;
+        window.balance += payout;
         updateBalance();
         winEffect($('#view-crash'));
         $('#crashCashout').disabled = true;
@@ -2171,8 +2174,8 @@ async function loadBalance(){
     const data = await res.json();
 
     if(data.balance != null){
-      balance = Number(data.balance);
-      updateBalance();
+      window.balance = Number(data.balance);
+      window.updateBalance();
     }
   }catch(e){
     console.log("balance load error");
